@@ -13,4 +13,4 @@ def fun_import_code(file_path, file_name, column):
     variable_column= df[column]
     print(variable_column)
 
-fun_import_code(file_path, file_name, 'D-J-F')
+#fun_import_code(file_path, file_name, 'D-J-F')

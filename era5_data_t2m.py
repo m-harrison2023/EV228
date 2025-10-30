@@ -6,8 +6,9 @@ import matplotlib.pyplot as plt
 netcdf_file_path="/Users/morganharrison/Downloads/ev228_data/"
 file_name= 'era5_t2m_1997-2025.nc'
 ds = xr.open_dataset(netcdf_file_path + file_name)
-print(ds)
+#print(ds)
 
 temp= ds.to_array('t2m')
 temp.plot()
+plt.title('Temp 2M')
 plt.show()

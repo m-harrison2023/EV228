@@ -1,0 +1,7 @@
+import pandas as pn
+import numpy as np
+import matplotlib.pyplot as plt
+
+file_path="/Users/morganharrison/Downloads/ev228_data/"
+file_name= 'Selected_Station_Observations_Daily_Xtab_202510261705.csv'
+df = pn.read_csv(file_path + file_name)

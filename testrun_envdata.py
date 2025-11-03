@@ -6,29 +6,31 @@ import pandas as pd
 import numpy as np
 import datetime as dt
 
+import fun_plots as fp
+import fun_import as fi
+
 file_path="/Users/morganharrison/Downloads/ev228_data/"
 selected_name= 'Selected_Station_Observations_Daily_Xtab_202510261705.csv'
 out_p= '/Users/morganharrison/Downloads/ev228_data/graphs/'
 out_fn= '1_envdata_story.png'
-df = pd.read_csv(file_path + selected_name)
-print(df.columns)
-df.plot()
-#plt.title('Discharge Value')
-#plt.show()
+df_csf = pd.read_csv(file_path + selected_name)
+print(df_csf.columns)
 
-#variable_column= df[column]
-#print(variable_column)
-#print(df)
+def loop_dates(df):
+    for a in range(9379):
+        yr = df.iloc[a, 1][2:12]
+        date = pd.to_datetime(yr)
+        df.iloc[a, 1] = date
+    print(df)
+    print(type(df.iloc[5, 1]))
+    return df.iloc[:,1]
+good_dates= loop_dates(df_csf)
+print(good_dates)
+df_csf['Year']= good_dates.year
+print(df_csf['Year'])
 
-for a in range(9379):
-    yr = df.iloc[a, 1][2:12]
-    date = pd.to_datetime(yr)
-    df.iloc[a, 1] = date
-print(df)
-print(type(df.iloc[5, 1]))
 
-sys.exit('STOP')
-
+#fp.timeseries(good_dates, in_x='''enter''', out_path=out_p, out_name=out_fn)
 
 # dates= pd.to_datetime(df['Date Time'])
 # print(dates)

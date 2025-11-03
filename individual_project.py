@@ -4,14 +4,11 @@ import xarray as xr
 import netCDF4 as nc
 
 #2005 Convective Precipitation and High Vegetation Cover
-#fn="/Users/morganharrison/Downloads/ev228_data/"
-#fp= 'data_stream-moda_stepType-avgad.nc'
-#ds = nc.Dataset(fn+fp)
-#print(ds)
-
 fn="/Users/morganharrison/Downloads/ev228_data/"
 fp= 'data_stream-moda_stepType-avgad.nc'
+out_fn= ''
+out_fp= '1_indvP.png'
 ds = xr.open_dataset(fn+fp)
-
+ds.plot()
 plt.title('Veggetation')
 plt.show()

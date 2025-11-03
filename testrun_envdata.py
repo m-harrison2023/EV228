@@ -1,3 +1,6 @@
+import sys
+'''Sys= allows to stop running code at certain point. Type: sys.exit('STOP')'''
+
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -5,22 +8,36 @@ import datetime as dt
 
 file_path="/Users/morganharrison/Downloads/ev228_data/"
 selected_name= 'Selected_Station_Observations_Daily_Xtab_202510261705.csv'
+out_p= '/Users/morganharrison/Downloads/ev228_data/graphs/'
+out_fn= '1_envdata_story.png'
 df = pd.read_csv(file_path + selected_name)
 print(df.columns)
-#df.plot()
+df.plot()
 #plt.title('Discharge Value')
 #plt.show()
 
-def envdata_code(file_path, selected_name, column):
-    df= pd.read_csv(file_path + selected_name)
-    variable_column= df[column]
-    print(variable_column)
-    df['Year']=df['Date'].dt.year
-    print(type(df.loc['Date']))
-    return variable_column
+#variable_column= df[column]
+#print(variable_column)
+#print(df)
 
-#envdata_code(file_path, selected_name, 'DISCHRG Value')
+for a in range(9379):
+    yr = df.iloc[a, 1][2:12]
+    date = pd.to_datetime(yr)
+    df.iloc[a, 1] = date
+print(df)
+print(type(df.iloc[5, 1]))
 
+sys.exit('STOP')
+
+
+# dates= pd.to_datetime(df['Date Time'])
+# print(dates)
+# df['Year']=df['Date Time'].dt.year
+# print(df['Year'])
+
+
+'''The long way, manually calculating annual DISHRG Value, 
+incomplete but alternative to transfer daily data into annual
 year_0= df.iloc[:364]['DISCHRG Value'].mean()
 year_1= df.iloc[365:729]['DISCHRG Value'].mean()
 year_2= df.iloc[729:1093]['DISCHRG Value'].mean()
@@ -35,8 +52,6 @@ year_10= df.iloc[3650: 4010]['DISCHRG Value'].mean()
 year_11= df.iloc[2915: 3280]['DISCHRG Value'].mean()
 year_12= df.iloc[3280:4375]['DISCHRG Value'].mean()
 year_13=df.iloc[4375:4740]['DISCHRG Value'].mean()
-print(year_0, year_1, year_2, year_3, year_4, year_5, year_6, year_7, year_8, year_9, year_10, year_11, year_12, year_13)
+#print(year_0, year_1, year_2, year_3, year_4, year_5, year_6, year_7, year_8, year_9, year_10, year_11, year_12, year_13)
 
-.plot()
-plt.title('Discharge Value')
-plt.show()
+'''

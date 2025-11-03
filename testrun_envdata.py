@@ -17,18 +17,17 @@ df_csf = pd.read_csv(file_path + selected_name)
 print(df_csf.columns)
 
 def loop_dates(df):
+    df['year']= None
     for a in range(9379):
         yr = df.iloc[a, 1][2:12]
         date = pd.to_datetime(yr)
         df.iloc[a, 1] = date
+        year=date.year
+        df.iloc[a, 8]=year
     print(df)
-    print(type(df.iloc[5, 1]))
-    return df.iloc[:,1]
+    return df
 good_dates= loop_dates(df_csf)
 print(good_dates)
-df_csf['Year']= good_dates.year
-print(df_csf['Year'])
-
 
 #fp.timeseries(good_dates, in_x='''enter''', out_path=out_p, out_name=out_fn)
 
@@ -36,7 +35,6 @@ print(df_csf['Year'])
 # print(dates)
 # df['Year']=df['Date Time'].dt.year
 # print(df['Year'])
-
 
 '''The long way, manually calculating annual DISHRG Value, 
 incomplete but alternative to transfer daily data into annual

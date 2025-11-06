@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import xarray as xr
 
-def map(in_da, out_path='', out_name=''):
+
+def mapveg(in_da, out_path='', out_name=''):
     ''' Plot map from 2D DataArray '''
     fig = plt.figure()
     ax = fig.add_subplot(111)
@@ -22,6 +23,7 @@ def map(in_da, out_path='', out_name=''):
 def import_era5(file_path='', var=''):
     ''' Import ERA5 gridded data '''
     ds = xr.open_dataset(file_path)
-    da = ds[var]
+    print(ds)
+    da = ds.to_array()
 
     return da

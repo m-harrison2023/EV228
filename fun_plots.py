@@ -10,12 +10,16 @@ def timeseries(in_df, in_x=None, out_path='', out_name=''):
     ''' Plot timeseries from 1D dataframe '''
     fig = plt.figure()
     ax = fig.add_subplot(111)
+    fig=plt.figure()
+    fig.patch.set_facecolor("#A1BFD4")
+    ax=fig.add_subplot(1, 1, 1)
+    ax.set_facecolor("#C2DCE4")
 
-    plt.plot(in_x, in_df, color='seafoamgreen', linewidth=2.5)
+    plt.plot(in_x, in_df, color="#3A094A", linewidth=2)
     plt.xlabel('years')
-    plt.xlim(1892, 2025)
+    plt.xlim(1948, 2025)
     plt.ylabel('annual temperature (deg C)')
-    plt.title('SGM00061600, Saint Louis, Senegal, 1892-2025')
+    plt.title('ASM00094998, Macquarie Island, Australia, 1948-2025')
     plt.savefig(out_path + out_name, dpi=400)
 
 def map(in_da, out_path='', out_name=''):

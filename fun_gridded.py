@@ -11,7 +11,6 @@ def mapveg(in_da, out_path='', out_name=''):
     ax = fig.add_subplot(111)
     lons = in_da.longitude
     lats = in_da.latitude
-
     image = plt.pcolormesh(lons, lats, in_da)
     plt.xlabel('longitude')
     plt.ylabel('latitude')

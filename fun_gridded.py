@@ -3,6 +3,7 @@ import sys
 import matplotlib.pyplot as plt
 import pandas as pd
 import xarray as xr
+import numpy as np
 
 
 def mapveg(in_da, out_path='', out_name=''):
@@ -10,8 +11,12 @@ def mapveg(in_da, out_path='', out_name=''):
     fig = plt.figure()
     ax = fig.add_subplot(111)
     lons = in_da.longitude
+    print(lons)
     lats = in_da.latitude
-    image = plt.pcolormesh(lons, lats, in_da)
+    print(lats)
+    # in_da =in_da[:, :-1, :-1]
+    X, Y= np.meshgrid(lons, lats)
+    image = plt.pcolormesh(Y, X, in_da, shading="nearest")
     plt.xlabel('longitude')
     plt.ylabel('latitude')
     plt.title('ERA5 Vegetation')
@@ -24,5 +29,5 @@ def import_era5(file_path='', var=''):
     ds = xr.open_dataset(file_path)
     print(ds)
     da = ds.to_array()
-
+    da= ds[var]
     return da

@@ -7,21 +7,18 @@ import numpy as np
 
 
 def mapveg(in_da, out_path='', out_name=''):
-    ''' Plot map from 2D DataArray '''
     fig = plt.figure()
-    ax = fig.add_subplot(111)
     lons = in_da.longitude
-    print(lons)
     lats = in_da.latitude
-    print(lats)
-    # in_da =in_da[:, :-1, :-1]
     X, Y= np.meshgrid(lons, lats)
+    #interval= ax.xaxis.get_view_interval()
+    #ax.set_xlim(sorted(interval), auto=None)
     image = plt.pcolormesh(Y, X, in_da, shading="nearest")
     plt.xlabel('longitude')
     plt.ylabel('latitude')
     plt.title('ERA5 Vegetation')
     cb = plt.colorbar(image, shrink=.75, orientation="vertical", pad=.02)
-    cb.set_label('Unit')
+    cb.set_label('Leaf area index')
     plt.savefig(out_path + out_name, dpi=400)
 
 def import_era5(file_path='', var=''):

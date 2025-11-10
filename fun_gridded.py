@@ -13,15 +13,14 @@ def mapveg(in_da, out_path='', out_name=''):
     lons = in_da.longitude
     lats = in_da.latitude
     image = plt.pcolormesh(lons, lats, in_da, shading="nearest")
-    plt.xlabel('longitude')
-    plt.ylabel('latitude')
-    plt.title('ERA5 Vegetation')
     cb = plt.colorbar(image, shrink=.75, orientation="horizontal", pad=.02)
-    cb.set_label('South America, High Leaf Coverage')
+    cb.set_label('Low Leaf Area Index')
     ax.set_extent([-80, -40, -20, 10], crs=ccrs.PlateCarree())
     ax.add_feature(cfeature.LAND)
     ax.add_feature(cfeature.OCEAN)
     ax.add_feature(cfeature.RIVERS)
+    
+    plt.title('Amazon Rainforest, ERA5 Vegetation')
     plt.savefig(out_path + out_name, dpi=400)
 
 def import_era5(file_path='', var=''):

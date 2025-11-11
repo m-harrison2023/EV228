@@ -1,5 +1,6 @@
 import pandas as pn
 import numpy as np
+from scipy import stats
 from scipy.stats import linregress
 import matplotlib.pyplot as plt
 
@@ -12,6 +13,9 @@ df_yr= df['YEAR']
 df_temp= df['metANN']
 
 slope, intercept, r_value, p_value, std_err= stats.linregress(df_yr, df_temp)
+print(slope)
+print(intercept)
+print(r_value)
 
 plt.scatter(df_yr, df_temp, color='green')
 plt.title('Raleigh-Durham Aiport (KRDU), Annual Mean Temp, 1887-2025')

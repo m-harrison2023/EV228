@@ -12,6 +12,8 @@ out_fn= '9_indvVeg.png'
     lai_lv: Low veg'''
 da_p = fun_gridded.import_era5(file_path=f_p + f_n, var='lai_hv')
 
+'''removing time vriable to be able to map.
+    looking at difference between mean of 1950 and 2025'''
 base_period= da_p.sel(valid_time=slice("1950-01-01", "1950-12-31"))
 base_mean= base_period.mean(dim='valid_time')
 

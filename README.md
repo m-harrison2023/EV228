@@ -2,22 +2,21 @@
 Code for ev228 class, many projects taken inspiration from dmhuehol github: ev228-analysis-environmental-data.
 
 # Code Index
-fun_gridded: For indiv_veg, 
-fun_import: Used from dmhuehol, edited to fit needs.
-fun_plots: 
-hello_world:
-import_code:
-indiv_veg:
-individual_project:
-practical_4:
-practical_6:
-practical_6.2:
-retrievel_2:
-scatter_KRDU:
-testrun_envdata: 
-testrun_encdata2: 
-wrap_era5_data_t2m:
-wrap_import_code: 
+fun_gridded: For indiv_veg, functions to pull for mapping and opening data with selected variable. 
+fun_import: Used from dmhuehol, edited to fit needs. Functions for importing data
+fun_plots: Used from dmhuehol, edited to fit needs. Functions for plotting
+import_code: KRDU dataset, function ro print column data
+indiv_veg: ERA5 data looking at high and low leaf index (Final independent project)
+individual_project: ERA5 data looking at leaf index and precipitation 
+practical_4: Importing import_code, various ERA5 data sets
+practical_6.2: ERA5 10m wind, mapping while eliminating tiem variable
+practical_6: SGM0061600 Temp, graphing and finding descriptive statistics
+retrievel_2: ASM0094998 Temp, graphing and finding descriptive statistics
+scatter_KRDU: Scatterplot Raleigh-Durham Airport (unfinished)
+testrun_envdata: South Platte River, CO, monthly mean of cfs graphed
+testrun_encdata2: Fire perimeters, geopandas (unfinished)
+wrap_era5_data_t2m: Importing era_5_data, functions to import, calculate and map data
+wrap_import_code: Importing import_code, reading KRDU temp
 
 # AI Statement
 AI was used as initial starting point for some coding questions when faced with an error or a new aspect of a project that had not previously been encountered. It was always followed by further research from various sites to further support the question and its found answer. 

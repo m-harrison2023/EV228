@@ -2,7 +2,7 @@
 Code for ev228 class, many projects taken inspiration from dmhuehol github: ev228-analysis-environmental-data.
 
 ### Individual Project
-Documentation: Individual Project (indiv_veg) is looking into high leaf index in the amazon between 1950-2025. It finds the difference between the start of 1950 and 2025 to see how/if there have been of note change to high leaf index over the 75 years.
+Documentation: Individual Project (indiv_veg) is looking into high leaf index in the amazon between 1950-2025. It finds the difference between the start of 1950 and 2025 to see how/if there have been of note change to high leaf index over the 75 years. See AI statement below.
 
 ### Practical 4
 Documentation: After downloading multiple data sets regarding monthly temperatures at specific airport locations, to get specifific variables from these various data sets I ran practical_4.py after importing a definition from import_code.py. In doing this I was able to adjust various columns I was looking at and retrieve specific data. 

@@ -1,9 +1,10 @@
 # EV228
 Code for ev228 class, many projects taken inspiration from dmhuehol github: ev228-analysis-environmental-data.
 
+### Individual Project
 Documentation: Individual Project (indiv_veg) is looking into high leaf index in the amazon between 1950-2025. It finds the difference between the start of 1950 and 2025 to see how/if there have been of note change to high leaf index over the 75 years.
 
-# Code Index
+## Code Index
 - fun_gridded: For indiv_veg, functions to pull for mapping and opening data with selected variable.
 - fun_import: Used from dmhuehol, edited to fit needs. Functions for importing data
 - fun_plots: Used from dmhuehol, edited to fit needs. Functions for plotting
@@ -20,10 +21,10 @@ Documentation: Individual Project (indiv_veg) is looking into high leaf index in
 - wrap_era5_data_t2m: Importing era_5_data, functions to import, calculate and map data
 - wrap_import_code: Importing import_code, reading KRDU temp
 
-# AI Statement
+## AI Statement
 AI was used as initial starting point for some coding questions when faced with an error or a new aspect of a project that had not previously been encountered. It was always followed by further research from various sites to further support the question and its found answer. 
 
-# Practical 4
+### Practical 4
 Code for ev228 class
 
 Documentation: After downloading multiple data sets regarding monthly temperatures at specific airport locations, to get specifific variables from these various data sets I ran practical_4.py after importing a definition from import_code.py. In doing this I was able to adjust various columns I was looking at and retrieve specific data. 
